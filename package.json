@@ -1,0 +1,31 @@
+{
+  "name": "iot-project-server",
+  "version": "1.0.0",
+  "description": "IOT project server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "setup": "npm install -g nodemon babel-cli",
+    "start": "nodemon --exec babel-node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maxjf1/iot-project-server.git"
+  },
+  "keywords": [
+    "IOT",
+    "UFJF"
+  ],
+  "author": "Grupo 7",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maxjf1/iot-project-server/issues"
+  },
+  "homepage": "https://github.com/maxjf1/iot-project-server#readme",
+  "devDependencies": {
+    "babel-preset-env": "^1.7.0"
+  },
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
