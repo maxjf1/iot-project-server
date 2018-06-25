@@ -16,13 +16,19 @@ No terminal siga os seguintes passos:
     npm run setup
     npm install
 
- ## Execução/Desenvolvimento
+## Execução/Desenvolvimento
 
  Para inicializar o servidor execute no terminal:
 
-    npm start 
+    npm start
 
 O servidor irá inicializar na porta configurada. Sempre que algum arquivo for modificado, o servidor irá reinciar automaticamente.
 
- O projeto é desenvolvido em JavaScript com Express.
- 
+O projeto é desenvolvido em JavaScript com Express.
+
+Servidor MQTT: `mqtt://200.131.219.102`
+
+## Links
+
+- [Lib MQTT](https://github.com/mqttjs/MQTT.js)
+- [LowDB](https://github.com/typicode/lowdb)
