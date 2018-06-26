@@ -4,3 +4,5 @@ export const mqttServer = 'mqtt://200.131.219.102'
 export const dbPath = 'database/database.json'
 // Porta do servidor
 export const serverPort = 3000
+
+export const arduinoSecret = "capivara"
