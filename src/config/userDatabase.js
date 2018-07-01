@@ -2,10 +2,13 @@ import lowDB from 'lowdb'
 import FileSync from 'lowdb/adapters/FileSync'
 import { dbPath } from './consts'
 
-const adapter = new FileSync(dbPath)
+const adapter = new FileSync(dbPath, {
+    serialize: data => JSON.stringify(data, null, 4)
+})
+
 const db = lowDB(adapter)
 
-// Set some defaults (required if your JSON file is empty)
+// DB Default
 db.defaults({ users: [], accessLog: [], tempLog: [] }).write()
 
 export default db

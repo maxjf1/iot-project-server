@@ -1,6 +1,6 @@
 import { Router } from 'express'
 import { arduinoSecret } from './config/consts'
-import db from './config/database';
+import { validateAccess } from './controllers/User'
 
 const router = Router()
 
@@ -16,13 +16,10 @@ router.use(({ headers }, res, next) => {
 /**
  * Autenticação Arduino por codigo
  */
-router.post('/auth/:code', ({ params }, res) => {
-    const user = db.get('users').find({ code: params.code }).value()
-    console.log(user)
-    user ?
+router.post('/auth/:code', ({ params }, res) =>
+    validateAccess(params.code) ?
         res.json(1) :
-        res.status(500).json(0)
-})
-
+        res.status(401).json(0)
+)
 
 export default router
