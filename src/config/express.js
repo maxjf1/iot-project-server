@@ -2,6 +2,7 @@ import express from 'express';
 import { serverPort } from './consts'
 
 const app = express()
+app.disable('x-powered-by')
 const retryTimeout = 3000
 export const start = (app, port = serverPort) => {
     app
