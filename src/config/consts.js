@@ -12,3 +12,4 @@ export const arduinoSecret = "capivara"
 export const mqttServer = 'mqtt://m2m.eclipse.org'
 export const mqttHumidityTopic = 'iot7-humidity'
 export const mqttTemperatureTopic = 'iot7-temperature'
+export const mqttAmbientTopic = 'iot7-ambient'

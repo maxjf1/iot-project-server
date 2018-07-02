@@ -1,6 +1,6 @@
 import { Router } from 'express'
-import { arduinoSecret } from './config/consts'
-import { validateAccess } from './controllers/User'
+import { arduinoSecret } from '../config/consts'
+import { validateAccess } from '../controllers/User'
 
 const router = new Router
 
