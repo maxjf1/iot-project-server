@@ -16,10 +16,12 @@ router.use(({ headers }, res, next) => {
 /**
  * Autenticação Arduino por codigo
  */
-router.post('/auth/:code', ({ params }, res) =>
+router.all('/auth/:code', ({params}, res) => {
+    console.log(params.code)
     validateAccess(params.code) ?
         res.json(1) :
         res.status(401).json(0)
+}
 )
 
 export default router

@@ -16,7 +16,7 @@ router.use(({ headers }, res, next) => {
 /**
  * Autenticação Arduino por codigo
  */
-router.post('/auth/:code', ({ params }, res) =>
+router.post('/auth/', ({ params }, res) =>
     validateAccess(params.code) ?
         res.json(1) :
         res.status(401).json(0)

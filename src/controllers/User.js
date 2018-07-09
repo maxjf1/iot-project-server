@@ -1,15 +1,19 @@
 import db from "../config/userDatabase"
 
 export function validateAccess(code, access = new Date) {
+    console.log('code: ', code)
+
     const user = db
         .get('users')
         .find({ code })
         .value()
 
-    console.log('usuario: ', validateAccessTime(user, access))
+    
     if (!user)
         return false
 
+    console.log('usuario: ', validateAccessTime(user, access))
+    
     if (user.inside) {
         registerUserExit(user.id, access)
         return true
@@ -24,7 +28,7 @@ export function validateAccess(code, access = new Date) {
 
 /**
  * Valida momento de acesso do usuário 
- * @param {Number} user Objeto de usuári
+ * @param {Number} user Objeto de usuário
  * @param {Date} [access=new Date] Hora do acesso
  */
 function validateAccessTime(user, access = new Date) {
